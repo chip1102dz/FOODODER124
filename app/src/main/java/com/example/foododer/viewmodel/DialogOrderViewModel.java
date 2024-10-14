@@ -68,6 +68,7 @@ public class DialogOrderViewModel {
             long id = System.currentTimeMillis();
             Order order = new Order(id, name, phone, address,
                     mAmount, getStringListFoodsOrder(), Constant.TYPE_PAYMENT_CASH);
+            GlobalFuntion.showToastMessage(mContext, mContext.getString(R.string.msg_order_success));
             dialogOrderModel.sendOrder(mContext,id, order, iSendOrderSuccessListener);
         }
     }

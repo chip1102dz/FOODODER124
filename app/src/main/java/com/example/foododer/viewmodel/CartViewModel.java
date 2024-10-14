@@ -92,7 +92,6 @@ public class CartViewModel {
 
     public void onClickOrderCart() {
         if (mContext == null || listFoodInCart == null || listFoodInCart.isEmpty()) {
-            Toast.makeText(mContext, "Không đơn hàng nào trong sản phẩm", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -104,7 +103,7 @@ public class CartViewModel {
 
         mDialogOrderViewModel = new DialogOrderViewModel(mContext, bottomSheetDialog, listFoodInCart,
                 strTotalPrice, mAmount, () -> {
-            GlobalFuntion.showToastMessage(mContext, mContext.getString(R.string.msg_order_success));
+
             GlobalFuntion.hideSoftKeyboard((Activity) mContext);
             bottomSheetDialog.dismiss();
 
